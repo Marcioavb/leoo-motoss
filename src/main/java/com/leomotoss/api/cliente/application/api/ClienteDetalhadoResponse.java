@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.leomotoss.api.cliente.Cliente;
 import com.leomotoss.api.cliente.Sexo;
 
 import lombok.Value;
@@ -22,17 +23,18 @@ public class ClienteDetalhadoResponse {
 	private Boolean aceitaTermos;
 	private LocalDateTime datahoraDoCadastro;
 	
-	public ClienteDetalhadoResponse(UUID idCliente, String nomeCompleto, String email, String celular, String telefone,
-			Sexo sexo, LocalDate dataNascimento, String cpf, Boolean aceitaTermos, LocalDateTime datahoraDoCadastro) {
-		this.idCliente = idCliente;
-		this.nomeCompleto = nomeCompleto;
-		this.email = email;
-		this.celular = celular;
-		this.telefone = telefone;
-		this.sexo = sexo;
-		this.dataNascimento = dataNascimento;
-		this.cpf = cpf;
-		this.aceitaTermos = aceitaTermos;
-		this.datahoraDoCadastro = datahoraDoCadastro;
+	
+
+	public ClienteDetalhadoResponse(Cliente cliente) {
+		this.idCliente = cliente.getIdCliente();
+		this.nomeCompleto = cliente.getNomeCompleto();
+		this.email = cliente.getEmail();
+		this.celular = cliente.getCelular();
+		this.telefone = cliente.getTelefone();
+		this.sexo = cliente.getSexo();
+		this.dataNascimento = cliente.getDataNascimento();
+		this.cpf = cliente.getCpf();
+		this.aceitaTermos = cliente.getAceitaTermos();
+		this.datahoraDoCadastro = cliente.getDatahoraDoCadastro();
 	}
 }

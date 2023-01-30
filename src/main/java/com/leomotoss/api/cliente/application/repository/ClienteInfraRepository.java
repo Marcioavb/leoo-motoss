@@ -1,10 +1,13 @@
 package com.leomotoss.api.cliente.application.repository;
 
 import java.util.List;
+import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import com.leomotoss.api.cliente.Cliente;
+import com.leomotoss.api.handler.APIException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -29,5 +32,14 @@ public class ClienteInfraRepository implements ClienteRepository {
 		List<Cliente> todosClientes = clienteSpringDataJPARepository.findAll();
 		log.info("[finaliza] ClienteInfraRepository -  buscaTodosClientes");
 		return todosClientes;
+	}
+
+	@Override
+	public Cliente buscaClienteComId(UUID idCliente) {
+		log.info("[ininia] ClienteInfraRepository -  buscaClienteComId");
+		Cliente cliente = clienteSpringDataJPARepository.findById(idCliente)
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente nao encontardo!"));
+		log.info("[ininia] ClienteInfraRepository -  buscaClienteComId");
+		return cliente;
 	}
 }
