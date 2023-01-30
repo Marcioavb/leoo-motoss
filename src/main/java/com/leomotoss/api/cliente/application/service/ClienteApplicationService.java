@@ -1,8 +1,11 @@
 package com.leomotoss.api.cliente.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.leomotoss.api.cliente.Cliente;
+import com.leomotoss.api.cliente.application.api.ClienteListResponse;
 import com.leomotoss.api.cliente.application.api.ClienteRequest;
 import com.leomotoss.api.cliente.application.api.ClienteResponse;
 import com.leomotoss.api.cliente.application.repository.ClienteRepository;
@@ -22,5 +25,13 @@ public class ClienteApplicationService implements ClienteService {
 		Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
 		log.info("[finaliza] ClienteApplicastionService - criaCliente");
 		return ClienteResponse.builder().idCliente(cliente.getIdCliente()).build();
+	}
+
+	@Override
+	public List<ClienteListResponse> buscaTodosClientes() {
+		log.info("[inicia] ClienteApplicastionService - buscaTodosClientes");
+		List<Cliente> clientes = clienteRepository.buscaTodosClientes();
+		log.info("[finaliza] ClienteApplicastionService - buscaTodosClientes");
+		return ClienteListResponse.converte(clientes);
 	}
 }
