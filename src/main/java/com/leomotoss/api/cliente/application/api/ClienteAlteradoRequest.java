@@ -19,5 +19,8 @@ public class ClienteAlteradoRequest {
 	private String telefone;
 	@NotNull
 	private boolean aceitaTermos;
-
+	
+	public @NotNull Boolean getaceitaTermos() {
+		return true;
+	}
 }

@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import com.leomotoss.api.cliente.application.api.ClienteAlteradoRequest;
 import com.leomotoss.api.cliente.application.api.ClienteRequest;
 
 import lombok.AccessLevel;
@@ -63,5 +64,14 @@ public class Cliente {
 		this.cpf = clienteRequest.getCpf();
 		this.aceitaTermos = clienteRequest.getAceitaTermos();
 		this.datahoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(ClienteAlteradoRequest clienteRequest) {
+		this.nomeCompleto = clienteRequest.getNomeCompleto();
+		this.email = clienteRequest.getEmail();
+		this.celular = clienteRequest.getCelular();
+		this.telefone = clienteRequest.getTelefone();
+		this.aceitaTermos = clienteRequest.getaceitaTermos();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
 	}
 }
