@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import com.leomotoss.api.cliente.Sexo;
+import com.leomotoss.api.cliente.domain.Sexo;
 
 import lombok.Value;
 

@@ -1,4 +1,4 @@
-package com.leomotoss.api.cliente;
+package com.leomotoss.api.cliente.domain;
 
 public enum Sexo {
 MASCULINO, FEMININO;

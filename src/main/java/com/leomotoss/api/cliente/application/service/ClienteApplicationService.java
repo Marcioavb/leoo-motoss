@@ -5,12 +5,12 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.leomotoss.api.cliente.Cliente;
 import com.leomotoss.api.cliente.application.api.ClienteDetalhadoResponse;
 import com.leomotoss.api.cliente.application.api.ClienteListResponse;
 import com.leomotoss.api.cliente.application.api.ClienteRequest;
 import com.leomotoss.api.cliente.application.api.ClienteResponse;
 import com.leomotoss.api.cliente.application.repository.ClienteRepository;
+import com.leomotoss.api.cliente.domain.Cliente;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

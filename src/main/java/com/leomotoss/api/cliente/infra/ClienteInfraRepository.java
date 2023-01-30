@@ -1,4 +1,4 @@
-package com.leomotoss.api.cliente.application.repository;
+package com.leomotoss.api.cliente.infra;
 
 import java.util.List;
 import java.util.UUID;
@@ -6,7 +6,8 @@ import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
-import com.leomotoss.api.cliente.Cliente;
+import com.leomotoss.api.cliente.application.repository.ClienteRepository;
+import com.leomotoss.api.cliente.domain.Cliente;
 import com.leomotoss.api.handler.APIException;
 
 import lombok.RequiredArgsConstructor;

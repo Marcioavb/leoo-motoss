@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import com.leomotoss.api.cliente.Cliente;
-import com.leomotoss.api.cliente.Sexo;
+import com.leomotoss.api.cliente.domain.Cliente;
+import com.leomotoss.api.cliente.domain.Sexo;
 
 import lombok.Value;
 

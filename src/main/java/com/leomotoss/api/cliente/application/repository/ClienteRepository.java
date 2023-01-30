@@ -3,7 +3,8 @@ package com.leomotoss.api.cliente.application.repository;
 import java.util.List;
 import java.util.UUID;
 
-import com.leomotoss.api.cliente.Cliente;
+import com.leomotoss.api.cliente.domain.Cliente;
+
 
 public interface ClienteRepository {
 	Cliente salva(Cliente cliente);
