@@ -1,6 +1,7 @@
 package com.leomotoss.api.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,12 @@ public class ClienteController implements ClienteApi {
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		log.info("[finaliza] ClienteController - getTodosClientes");	
 		return clientes;
+	}
+
+	@Override
+	public ClienteDetalhadoResponse buscaClienteComId(UUID idCliente) {
+		log.info("[inicia] ClienteController - buscaClienteComId");	
+		log.info("[inicia] ClienteController - buscaClienteComId");	
+		return null;
 	}
 }
